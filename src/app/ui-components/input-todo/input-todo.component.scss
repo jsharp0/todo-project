@@ -1,0 +1,15 @@
+@import '/src/styles';
+
+.container {
+    .text-input {
+        border: none;
+        font-size: $font-size;
+        font-family: Helvetica;
+    }
+
+    .text-input:focus {
+        border: none;
+        outline: none;
+    }
+}
+

@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Primary Colors
+$primary-bright-blue: hsl(220, 98%, 61%);
+$primary-checkbox-gradient: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// Light Theme
+$light-gray: hsl(0, 0%, 98%);
+$light-gray-blue: hsl(236, 33%, 92%);
+$light-medium-gray-blue: hsl(233, 11%, 84%);
+$light-dark-gray-blue: hsl(236, 9%, 61%);
+$light-very-dark-gray-blue: hsl(235, 19%, 35%);
+
+// Dark Theme
+$dark-blue: hsl(235, 21%, 11%);
+$dark-desaturated-blue: hsl(235, 24%, 19%);
+$dark-light-gray-blue: hsl(234, 39%, 85%);
+$dark-light-gray-blue-hover: hsl(236, 33%, 92%);
+$dark-gray-blue: hsl(234, 11%, 52%);
+$dark-very-dark-gray-blue: hsl(233, 14%, 35%);
+$dark-very-dark-gray-blue-2: hsl(237, 14%, 26%);
+
+// Typography
+$font-size: 1.125rem;
+$font-family: 'Josefin Sans', sans-serif;
+$font-normal: 400;
+$font-bold: 700;
+
+// Images
+
+    // Light Theme
+    $light-desktop-bground: 'assets/bgdesktoplight.jpg';
+    $light-mobile-bground: 'assets/bg-mobile-light.jpg';
+    $light-moon-icon: 'assets/icon-moon.svg';
+
+    // Dark Theme
+    $dark-desktop-bground: 'assets/bg-desktop-dark.jpg';
+    $dark-mobile-bground: 'assets/bg-mobile-dark.jpg';
+    $dark-sun-icon: 'assets/icon-sun.svg';
+
+.container {
+    height: 62px;        
+    background-color: white;
+    padding: 5px 24px;
+    box-shadow: 0 35px 50px -15px hsla(237, 20%, 80%, 0.5);
+    border-radius: 5px;
+    border: 1px solid $light-gray-blue;
+    display: flex;
+    align-items: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: $font-family; }
