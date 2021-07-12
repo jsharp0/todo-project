@@ -1,0 +1,6 @@
+<div class="checkbox" (click)="toggleCheckbox()">
+    <label [class.checkmark]="checked"></label>
+    <span class="checkbox-label" [class.completed]="checked">
+        <ng-content></ng-content>
+    </span>
+</div>
