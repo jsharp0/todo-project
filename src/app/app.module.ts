@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TodoReducer } from './store/Reducers/todo.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { TodoContainerComponent } from './todo-container/todo-container.componen
 import { TodoItemComponent } from './todo-container/todo-item/todo-item.component';
 import { CheckboxComponent } from './ui-components/checkbox/checkbox.component';
 import { InputTodoComponent } from './ui-components/input-todo/input-todo.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { InputTodoComponent } from './ui-components/input-todo/input-todo.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({
+      todo: TodoReducer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
