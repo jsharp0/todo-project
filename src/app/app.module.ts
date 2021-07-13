@@ -26,6 +26,7 @@ import { StoreModule } from '@ngrx/store';
     StoreModule.forRoot({
       todo: TodoReducer,
     }),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
