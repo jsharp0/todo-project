@@ -1,5 +1,5 @@
 import { Todo } from './todo.model';
 
 export interface State {
-    readonly todos: Array<Todo>;
+    readonly todo: Array<Todo>;
 }

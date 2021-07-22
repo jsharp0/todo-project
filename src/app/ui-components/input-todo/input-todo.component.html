@@ -1,5 +1,6 @@
 <div class="container">
     <app-checkbox [disabled]="true">
-        <input class="text-input" type="text" placeholder="Create a new todo...">
+        <input class="text-input" [(ngModel)]="newTodo" type="text" 
+        placeholder="Create a new todo..." (keydown)="saveTodo($event)">
     </app-checkbox>
 </div>

@@ -5,6 +5,10 @@ const initialState: Array<Todo> = [
     {
         completed: true,
         text: 'Pick up milk'
+    },
+    {
+        completed: false,
+        text: 'Pick up orange juice'
     }
 ];
 

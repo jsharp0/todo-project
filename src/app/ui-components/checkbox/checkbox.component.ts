@@ -14,7 +14,9 @@ export class CheckboxComponent implements OnInit {
   ngOnInit(): void { }
 
   toggleCheckbox(): void {
-    this.checked = !this.checked;
+    if (!this.disabled) {
+      this.checked = !this.checked;
+    }
   }
 
 }
