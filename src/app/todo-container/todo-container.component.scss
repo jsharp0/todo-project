@@ -1,0 +1,21 @@
+@import '/src/styles.scss';
+
+.tool-bar {
+    list-style: none;
+    justify-content: space-between;
+    font-size: 14px;
+    color: $light-dark-gray-blue;
+
+    .filters {
+        display: flex;
+
+        li {
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        .filter-active {
+            color: $primary-bright-blue;
+        }
+    }
+}
