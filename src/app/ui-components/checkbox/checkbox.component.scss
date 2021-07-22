@@ -1,24 +1,22 @@
 @import '/src/styles.scss';
 
-.test {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  cursor: pointer;
-}
 .checkbox {
   border: 1px solid $light-gray-blue;
   height: 24px;
   width: 24px;
   border-radius: 24px;
-  background: $primary-checkbox-gradient;
+  display: flex;
+  
+  cursor: pointer;
 
+  
 
   .checkmark::before {
     content: "";
     color: white;
     display: inline-block;
     margin-top: 6px;
+    margin-left: 6px;
     height: 6px;
     width: 9px;
     border-left: 2px solid;
@@ -28,8 +26,12 @@
 
   .checkbox-label {
     position: absolute;
-    left: 150px;
-    margin-top: 5px;
+    padding-left: 48px;
+    padding-top: 5px;
   }
 
+}
+
+.checkbox.completed {
+  background: $primary-checkbox-gradient;
 }
