@@ -1,16 +1,18 @@
-<div *ngFor="let todo of filteredTodoList">
-    <app-todo-item [todo]="todo"></app-todo-item>
-</div>
-<div class="tool-bar container">
-    
-    <li>{{ todoList.length }} items left</li>
-
-    <div class="filters">
-        <li [class.filter-active]="!currentFilter" (click)="filterItems()">All</li>
-        <li [class.filter-active]="currentFilter == 'active'" (click)="filterItems('active')">Active</li>
-        <li [class.filter-active]="currentFilter == 'completed'" (click)="filterItems('completed')">Completed</li>
+<div class="todo-container">
+    <div *ngFor="let todo of filteredTodoList">
+        <app-todo-item [todo]="todo" [lightMode]="lightMode"></app-todo-item>
     </div>
+    <div class="tool-bar container" [class.dark]="!lightMode">
+        
+        <li>{{ todoList.length }} items left</li>
     
-    <li (click)="clearCompleted()">Clear Completed</li>
-
+        <div class="filters">
+            <li [class.filter-active]="!currentFilter" (click)="filterItems()">All</li>
+            <li [class.filter-active]="currentFilter == 'active'" (click)="filterItems('active')">Active</li>
+            <li [class.filter-active]="currentFilter == 'completed'" (click)="filterItems('completed')">Completed</li>
+        </div>
+        
+        <li (click)="clearCompleted()">Clear Completed</li>
+    
+    </div>
 </div>

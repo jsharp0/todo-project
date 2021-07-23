@@ -1,3 +1,3 @@
-<div class="container">
-    <app-checkbox [checked]="todo.completed" (itemCompleted)="updateTodo($event)">{{ todo.text }}</app-checkbox>
+<div class="container" [class.dark]="!lightMode">
+    <app-checkbox [checked]="todo.completed" [lightMode]="lightMode" (itemCompleted)="updateTodo($event)">{{ todo.text }}</app-checkbox>
 </div>

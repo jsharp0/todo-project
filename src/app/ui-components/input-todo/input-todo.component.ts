@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { State } from 'src/app/store/Models/state.model';
 import { Store } from '@ngrx/store';
 import { AddItemAction } from 'src/app/store/Actions/todo.action';
@@ -11,6 +11,7 @@ import { AddItemAction } from 'src/app/store/Actions/todo.action';
 export class InputTodoComponent implements OnInit {
   checked;
   newTodo: string;
+  @Input() lightMode = true;
 
   constructor(private store: Store<State>) { }
 

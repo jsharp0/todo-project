@@ -1,16 +1,17 @@
 @import '/src/styles';
 
 .container {
-    .text-input {
-        border: none;
-        font-size: $font-size;
-        font-family: Helvetica;
-        margin-top: -5px;
-    }
-
-    .text-input:focus {
-        border: none;
-        outline: none;
-    }
+        .text-input {
+            border: none;
+            font-size: $font-size;
+            font-family: Helvetica;
+            margin-top: -5px;
+            background-color: none;
+        }
+    
+        .text-input:focus {
+            border: none;
+            outline: none;
+        }
 }
 

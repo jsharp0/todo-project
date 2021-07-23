@@ -1,4 +1,4 @@
-<div class="checkbox" [class.completed]="checked" (click)="toggleCheckbox()">
+<div class="checkbox" [class.dark-checkbox]="!lightMode" [class.completed]="checked" (click)="toggleCheckbox()">
     <label [class.checkmark]="checked"></label>
     <span class="checkbox-label">
         <ng-content></ng-content>

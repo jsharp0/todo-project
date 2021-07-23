@@ -10,6 +10,6 @@ alt="Mountain background">
         (click)="toggleLightMode()">
     </div>
     <div class="break"></div>
-    <app-input-todo></app-input-todo>
-    <app-todo-container></app-todo-container>
+    <app-input-todo [lightMode]="lightMode"></app-input-todo>
+    <app-todo-container [lightMode]="lightMode"></app-todo-container>
 </div>

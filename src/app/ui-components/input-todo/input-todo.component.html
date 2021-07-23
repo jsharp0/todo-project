@@ -1,6 +1,6 @@
-<div class="container">
-    <app-checkbox [disabled]="true">
-        <input class="text-input" [(ngModel)]="newTodo" type="text" 
+<div class="container" [class.dark]="!lightMode">
+    <app-checkbox [disabled]="true" [lightMode]="lightMode">
+        <input class="text-input" [class.dark-input]="!lightMode" [(ngModel)]="newTodo" type="text" 
         placeholder="Create a new todo..." (keydown)="saveTodo($event)">
     </app-checkbox>
 </div>

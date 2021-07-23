@@ -11,6 +11,7 @@ import { Todo } from '../../store/Models/todo.model';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
+  @Input() lightMode = true;
 
   constructor(private store: Store<State>) { }
 

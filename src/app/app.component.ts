@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from './store/Models/todo.model';
 import { Store } from '@ngrx/store';
@@ -21,9 +21,17 @@ export class AppComponent {
   darkMobileBground = 'assets/bg-mobile-dark.jpg';
   darkSunIcon = 'assets/icon-sun.svg';
 
-  constructor(private store: Store<State>) {}
+  constructor(private renderer: Renderer2) {}
 
   toggleLightMode(): void {
     this.lightMode = !this.lightMode;
+
+    if (!this.lightMode) {
+      this.renderer.addClass(document.body, 'dark-page');
+      this.renderer.removeClass(document.body, 'light-page');
+    } else {
+      this.renderer.addClass(document.body, 'light-page');
+      this.renderer.removeClass(document.body, 'dark-page');
+    }
   }
 }

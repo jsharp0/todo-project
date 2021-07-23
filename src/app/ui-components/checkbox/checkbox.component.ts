@@ -9,6 +9,7 @@ import { EventEmitter } from '@angular/core';
 export class CheckboxComponent implements OnInit {
   @Input() checked: boolean;
   @Input() disabled: boolean;
+  @Input() lightMode: boolean;
   @Output() itemCompleted: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }

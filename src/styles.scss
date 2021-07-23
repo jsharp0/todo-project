@@ -43,11 +43,33 @@ $font-bold: 700;
     background-color: white;
     padding: 5px 24px;
     box-shadow: 0 35px 50px -15px hsla(237, 20%, 80%, 0.5);
-    border-radius: 5px;
     border: 1px solid $light-gray-blue;
     display: flex;
     align-items: center;
 }
 
+.dark {
+    background-color: $dark-desaturated-blue;
+    border: none;
+    box-shadow: 0 35px 50px -15px $dark-blue;
+    color: $dark-light-gray-blue;
+
+    input {
+        color: $dark-light-gray-blue;
+    }
+}
+
+.light-page {
+    background-color: white;
+} 
+
+.dark-page {
+    background-color: $dark-blue;
+} 
+
+input {
+    background-color: transparent;
+    font-family: $font-family !important;
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: $font-family; }
+body { margin: 0; font-family: $font-family;}

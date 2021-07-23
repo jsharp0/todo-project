@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input } from '@angular/core';
 import { Todo } from '../store/Models/todo.model';
 import { State } from '../store/Models/state.model';
 import { Store } from '@ngrx/store';
@@ -18,6 +18,8 @@ export class TodoContainerComponent implements OnInit {
   filteredTodoList: Todo[] = [];
 
   currentFilter: string = null;
+
+  @Input() lightMode = true;
 
   constructor(private store: Store<State>, private _cdr: ChangeDetectorRef) { }
 
