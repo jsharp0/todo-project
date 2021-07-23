@@ -28,6 +28,7 @@ export class TodoContainerComponent implements OnInit {
     this.store.select(todos => todos).subscribe(todoList => {
       this.todoList = todoList.todo;
       this.filteredTodoList = this.todoList;
+      this.filterItems(this.currentFilter);
       this._cdr.detectChanges();
     });
   }
@@ -49,8 +50,6 @@ export class TodoContainerComponent implements OnInit {
 
   clearCompleted(): void {
     const todosToDelete = this.todoList.filter(todo => todo.completed);
-    console.log('to delete')
-    console.log(todosToDelete);
     todosToDelete.forEach(todo => {
       const index = this.todoList.findIndex(selectTodo => selectTodo === todo);
       this.store.dispatch(new RemoveItemAction(index));
