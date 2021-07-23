@@ -1,6 +1,6 @@
-<div class="todo-container">
+<div class="todo-container" cdkDropList (cdkDropListDropped)="moveItem($event)">
     <div *ngFor="let todo of filteredTodoList">
-        <app-todo-item [todo]="todo" [lightMode]="lightMode"></app-todo-item>
+        <app-todo-item [todo]="todo" [lightMode]="lightMode" cdkDrag></app-todo-item>
     </div>
     <div class="tool-bar container" [class.dark]="!lightMode">
         

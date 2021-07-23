@@ -2,7 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input } 
 import { Todo } from '../store/Models/todo.model';
 import { State } from '../store/Models/state.model';
 import { Store } from '@ngrx/store';
-import { RemoveItemAction } from '../store/Actions/todo.action';
+import { MoveItemAction, RemoveItemAction } from '../store/Actions/todo.action';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-container',
@@ -54,6 +55,10 @@ export class TodoContainerComponent implements OnInit {
       const index = this.todoList.findIndex(selectTodo => selectTodo === todo);
       this.store.dispatch(new RemoveItemAction(index));
     });
+  }
+
+  moveItem(event: CdkDragDrop<Todo[]>): void {
+    this.store.dispatch(new MoveItemAction(event.previousIndex, event.currentIndex));
   }
 
 }

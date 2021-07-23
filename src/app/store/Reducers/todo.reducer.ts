@@ -1,5 +1,6 @@
 import { Todo } from '../Models/todo.model';
 import { TodoAction, TodoActionType } from '../Actions/todo.action';
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 
 const initialState: Array<Todo> = [
     {
@@ -28,6 +29,10 @@ export function TodoReducer(
             const index = updateState.findIndex(todo => todo === action.payload);
             updateState.splice(index, 1, action.newItem);
             return updateState;
+        case TodoActionType.MOVE_ITEM:
+            const moveState = [...state];
+            moveItemInArray(moveState, action.previousPosition, action.newPostionn);
+            return moveState;
         default:
             return state;
     }

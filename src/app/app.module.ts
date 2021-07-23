@@ -9,6 +9,8 @@ import { TodoContainerComponent } from './todo-container/todo-container.componen
 import { TodoItemComponent } from './todo-container/todo-item/todo-item.component';
 import { CheckboxComponent } from './ui-components/checkbox/checkbox.component';
 import { InputTodoComponent } from './ui-components/input-todo/input-todo.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 import { StoreModule } from '@ngrx/store';
 
 @NgModule({
@@ -23,6 +25,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DragDropModule,
     StoreModule.forRoot({
       todo: TodoReducer,
     }),
