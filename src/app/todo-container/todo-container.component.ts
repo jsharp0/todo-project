@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Todo } from '../store/Models/todo.model';
 import { State } from '../store/Models/state.model';
 import { Store } from '@ngrx/store';
+import { RemoveItemAction } from '../store/Actions/todo.action';
 
 @Component({
   selector: 'app-todo-container',
@@ -23,29 +24,31 @@ export class TodoContainerComponent implements OnInit {
   ngOnInit(): void {
     this.store.select(todos => todos).subscribe(todoList => {
       this.todoList = todoList.todo;
+      this.filteredTodoList = this.todoList;
     });
-
-    this.filteredTodoList = this.todoList;
   }
 
   filterItems(filter?: string): void {
     this.currentFilter = filter;
-    console.log(this.currentFilter);
     switch (filter) {
     case 'completed':
         this.filteredTodoList = this.todoList.filter(todo => todo.completed);
-        // this.currentFilter = 'completed'
         break;
     case 'active':
         this.filteredTodoList = this.todoList.filter(todo => !todo.completed);
-        // this.currentFilter = 'active';
         break;
       default:
         this.filteredTodoList  = this.todoList;
-        // this.currentFilter = null;
         break;
     }
-    console.log(this.filteredTodoList);
+  }
+
+  clearCompleted(): void {
+    const todosToDelete = this.todoList.filter(todo => todo.completed);
+    todosToDelete.forEach(todo => {
+      const index = this.todoList.findIndex(selectTodo => selectTodo === todo);
+      this.store.dispatch(new RemoveItemAction(index));
+    });
   }
 
 }

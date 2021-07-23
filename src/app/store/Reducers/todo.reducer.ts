@@ -14,11 +14,17 @@ const initialState: Array<Todo> = [
 
 export function TodoReducer(
     state: Array<Todo> = initialState,
-    action: TodoAction
+    action: any
 ) {
     switch (action.type) {
         case TodoActionType.ADD_ITEM:
             return [...state, action.payload];
+        case TodoActionType.REMOVE_ITEM:
+            console.log('state: ');
+            console.log(state);
+            let newState = [...state];
+            newState.splice(action.payload, 1);
+            return newState;
         default:
             return state;
     }

@@ -11,6 +11,6 @@
         <li [class.filter-active]="currentFilter == 'completed'" (click)="filterItems('completed')">Completed</li>
     </div>
     
-    <li>Clear Completed</li>
+    <li (click)="clearCompleted()">Clear Completed</li>
 
 </div>

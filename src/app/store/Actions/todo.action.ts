@@ -4,6 +4,7 @@ import { Todo } from '../Models/todo.model';
 // Every NgRx Action has two main properties: type and optional payload
 export enum TodoActionType {
     ADD_ITEM = '[TODO] Add Todo',
+    REMOVE_ITEM = '[TODO] Remove Todo'
 }
 export class AddItemAction implements Action {
     // Here's the type
@@ -13,4 +14,13 @@ export class AddItemAction implements Action {
     constructor(public payload: Todo) {}
 }
 
+export class RemoveItemAction implements Action {
+    // Here's the type
+    readonly type = TodoActionType.REMOVE_ITEM;
+
+    // And here's the optional payload
+    constructor(public payload: number) {}
+}
+
 export type TodoAction = AddItemAction;
+// something here

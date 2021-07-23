@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { State } from 'src/app/store/Models/state.model';
 import { Store } from '@ngrx/store';
 import { AddItemAction } from 'src/app/store/Actions/todo.action';
-import { Todo } from 'src/app/store/Models/todo.model';
 
 @Component({
   selector: 'app-input-todo',
