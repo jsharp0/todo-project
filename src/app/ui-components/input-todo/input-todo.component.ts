@@ -25,10 +25,6 @@ export class InputTodoComponent implements OnInit {
     if (e.key === 'Enter') {
       this.store.dispatch(new AddItemAction({completed: false, text: this.newTodo}));
       this.newTodo = '';
-      this.store.select(res => res).subscribe(res => {
-        console.log("Here's our store");
-        console.log(res);
-      });
     }
   }
 

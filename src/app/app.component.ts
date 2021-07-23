@@ -25,9 +25,5 @@ export class AppComponent {
 
   toggleLightMode(): void {
     this.lightMode = !this.lightMode;
-
-    this.store.select(res => res).subscribe(res => {
-      console.log(res);
-    })
   }
 }

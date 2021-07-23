@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -8,7 +9,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CheckboxComponent implements OnInit {
   @Input() checked: boolean;
   @Input() disabled: boolean;
-  
+  @Output() itemCompleted: EventEmitter<boolean> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -16,6 +18,7 @@ export class CheckboxComponent implements OnInit {
   toggleCheckbox(): void {
     if (!this.disabled) {
       this.checked = !this.checked;
+      this.itemCompleted.emit(this.checked);
     }
   }
 

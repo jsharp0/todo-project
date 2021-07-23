@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Todo } from '../store/Models/todo.model';
 import { State } from '../store/Models/state.model';
 import { Store } from '@ngrx/store';
@@ -19,12 +19,13 @@ export class TodoContainerComponent implements OnInit {
 
   currentFilter: string = null;
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<State>, private _cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.store.select(todos => todos).subscribe(todoList => {
       this.todoList = todoList.todo;
       this.filteredTodoList = this.todoList;
+      this._cdr.detectChanges();
     });
   }
 
@@ -45,6 +46,8 @@ export class TodoContainerComponent implements OnInit {
 
   clearCompleted(): void {
     const todosToDelete = this.todoList.filter(todo => todo.completed);
+    console.log('to delete')
+    console.log(todosToDelete);
     todosToDelete.forEach(todo => {
       const index = this.todoList.findIndex(selectTodo => selectTodo === todo);
       this.store.dispatch(new RemoveItemAction(index));

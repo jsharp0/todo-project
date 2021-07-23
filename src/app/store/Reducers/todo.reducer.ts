@@ -20,11 +20,14 @@ export function TodoReducer(
         case TodoActionType.ADD_ITEM:
             return [...state, action.payload];
         case TodoActionType.REMOVE_ITEM:
-            console.log('state: ');
-            console.log(state);
-            let newState = [...state];
-            newState.splice(action.payload, 1);
-            return newState;
+            const remState = [...state];
+            remState.splice(action.payload, 1);
+            return remState;
+        case TodoActionType.UPDATE_ITEM:
+            const updateState = [...state];
+            const index = updateState.findIndex(todo => todo === action.payload);
+            updateState.splice(index, 1, action.newItem);
+            return updateState;
         default:
             return state;
     }
