@@ -2,16 +2,7 @@ import { Todo } from '../Models/todo.model';
 import { TodoAction, TodoActionType } from '../Actions/todo.action';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 
-const initialState: Array<Todo> = [
-    {
-        completed: true,
-        text: 'Pick up milk'
-    },
-    {
-        completed: false,
-        text: 'Pick up orange juice'
-    }
-];
+const initialState: Array<Todo> = [];
 
 export function TodoReducer(
     state: Array<Todo> = initialState,
