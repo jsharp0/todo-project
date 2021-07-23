@@ -34,8 +34,17 @@
 
 .checkbox.completed {
   background: $primary-checkbox-gradient;
+  
+  .checkbox-label {
+    text-decoration: line-through;
+    color: $light-gray-blue;
+  }
 }
 
 .dark-checkbox {
   border-color: $dark-very-dark-gray-blue-2;
+
+  &.completed .checkbox-label {
+    color: $dark-very-dark-gray-blue !important;
+  }
 }

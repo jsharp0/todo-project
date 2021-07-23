@@ -1,6 +1,7 @@
 @import '/src/styles';
 
 .container {
+    border-radius: 5px;
         .text-input {
             border: none;
             font-size: $font-size;
